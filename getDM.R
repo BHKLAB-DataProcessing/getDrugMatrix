@@ -118,6 +118,7 @@ create_exprsdata_DM <- function(species=c("Rat"), phenodata_DM, verbose = TRUE) 
   return(eset)
 }
 eset <- create_exprsdata_DM("Rat", phenodata_DM)
+phenodata_DM <- phenodata_DM[match(rownames(eset@phenoData@data), phenodata_DM$celfilename),] #added since eset had different ordering of CEL names as phenoData, which raises an error
 colnames(eset) <- gsub(".CEL", "", colnames(eset))
 
 create_featuredata_DM <- function(species=c("Rat"), eset, verbose = TRUE){
