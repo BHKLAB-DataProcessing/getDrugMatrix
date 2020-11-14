@@ -10,7 +10,7 @@ library(data.table)
 library(SummarizedExperiment)
 
 #reading the metadata downloaded from diXa
-s_Hepatocyte <- read.delim("/pfs/getDrugMatrix/s_Hepatocyte.txt", stringsAsFactors = F, sep = "\t")
+s_Hepatocyte <- read.delim("/pfs/getDrugMatrix/s_Hepatocyte.csv", stringsAsFactors = F, sep = "\t")
 s_Hepatocyte$Factor.Value.Compound. <- gsub("17\\?-ethynylestradiol", "17a-ethynylestradiol", s_Hepatocyte$Factor.Value.Compound.)
 
 s_Hepatocyte_fil <- s_Hepatocyte[, colSums(is.na(s_Hepatocyte)) != nrow(s_Hepatocyte)]
