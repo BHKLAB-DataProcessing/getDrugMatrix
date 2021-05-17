@@ -127,7 +127,7 @@ create_featuredata_DM <- function(species=c("Rat"), eset, verbose = TRUE){
   if (species == "Rat"){
     ensembl <- useMart("ensembl")
     datasets <- listDatasets(ensembl)
-    ensembl = useMart("ensembl", dataset = "rnorvegicus_gene_ensembl", host="uswest.ensembl.org",ensemblRedirect = FALSE)
+    ensembl = useMart("ensembl", dataset = "rnorvegicus_gene_ensembl", host="uswest.ensembl.org")
     storageMode(eset) <- "environment"
     affxrows <- rownames(eset@assayData$exprs)
     rownames(eset@assayData$exprs) <- substr(rownames(eset@assayData$exprs), 1, nchar(affxrows)-3)
