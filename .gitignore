@@ -170,5 +170,4 @@ dmypy.json
 
 .snakemake
 tmp
-data
 download
